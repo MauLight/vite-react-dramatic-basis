@@ -22,7 +22,7 @@ export const Character = () => {
                         styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
 
                     >
-                        {!state.need ? `To experience ${state.wound.toLowerCase()} because of ${state.ghost} and understand the truth.` : state.need}
+                        {!state.need ? `To experience ${state.wound.toLowerCase()} because of ${state.ghost} and understand that ${state.truth}.` : state.need}
                     </Highlight>
                 </Text>
             </Box>

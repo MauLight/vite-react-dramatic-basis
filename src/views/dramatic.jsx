@@ -2,6 +2,7 @@ import { Box, Container, Divider, Flex, HStack, Heading, Highlight, Input, Text 
 import { createContext, useState, useReducer } from "react"
 import { Theme } from "../components/theme"
 import { Character } from "../components/character"
+import { CH_Logline } from "../components/ch_logline";
 
 export const AppContext = createContext();
 
@@ -22,6 +23,7 @@ const reducer = (state, action) => {
     if (action.type === 'need') return { ...state, need: action.payload }
     if (action.type === 'wound') return { ...state, wound: action.payload }
     if (action.type === 'ghost') return { ...state, ghost: action.payload }
+    if (action.type === 'ch_logline') return { ...state, ch_logline: action.payload }
 }
 
 export const Dramatic = () => {
@@ -40,6 +42,7 @@ export const Dramatic = () => {
             <AppContext.Provider value={{ state, dispatch }}>
                 <Theme />
                 <Character />
+                <CH_Logline />
             </AppContext.Provider>
         </Container>
     )
