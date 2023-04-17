@@ -18,7 +18,7 @@ export const Character = () => {
                 <Text mt={5} lineHeight='tall'>
                     <Highlight
                         className="description"
-                        query={['flaw', 'truth']}
+                        query={['wound', 'ghost', 'truth']}
                         styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
 
                     >

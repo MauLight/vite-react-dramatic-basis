@@ -28,7 +28,6 @@ export const Theme = () => {
                     </Text>
                 </Box>
             </Flex>
-            <Divider orientation="vertical" />
             <Flex wrap="wrap">
                 <Box my={10} mx={5}>
                     <Heading as="h4" textAlign="left" fontSize={30}>{'a) Truth: '}<Text textAlign="center" fontSize='lg'>{state.truth}</Text></Heading>

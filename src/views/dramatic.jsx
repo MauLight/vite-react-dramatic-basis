@@ -1,8 +1,9 @@
-import { Box, Container, Divider, Flex, HStack, Heading, Highlight, Input, Text } from "@chakra-ui/react"
+import { Box, Container, Divider, HStack, Heading } from "@chakra-ui/react"
 import { createContext, useState, useReducer } from "react"
 import { Theme } from "../components/theme"
 import { Character } from "../components/character"
 import { CH_Logline } from "../components/ch_logline";
+import Conflict from "../components/Conflict";
 
 export const AppContext = createContext();
 
@@ -12,7 +13,12 @@ const initialState = {
     lie: "lie",
     contrapositive: "contrapositive",
     wound: "Wound",
-    ghost: "ghost"
+    ghost: "ghost",
+    ch_logline: "",
+    desire: "desire",
+    goal: "goal",
+    plan: [],
+    antagonist: "",
 }
 
 const reducer = (state, action) => {
@@ -24,6 +30,13 @@ const reducer = (state, action) => {
     if (action.type === 'wound') return { ...state, wound: action.payload }
     if (action.type === 'ghost') return { ...state, ghost: action.payload }
     if (action.type === 'ch_logline') return { ...state, ch_logline: action.payload }
+    if (action.type === 'desire') return { ...state, desire: action.payload }
+    if (action.type === 'goal') return { ...state, goal: action.payload }
+    if (action.type === 'antagonism') return { ...state, antagonism: action.payload }
+    if (action.type === 'plan') return { ...state, plan: [...state.plan, action.payload] }
+    if (action.type === 'antagonist') return { ...state, antagonist: action.payload }
+    if (action.type === 'allies') return { ...state, allies: action.payload }
+    if (action.type === 'gatekeepers') return { ...state, gatekeepers: action.payload }
 }
 
 export const Dramatic = () => {
@@ -41,8 +54,12 @@ export const Dramatic = () => {
             <Divider orientation='horizontal' />
             <AppContext.Provider value={{ state, dispatch }}>
                 <Theme />
+                <Divider my={10} />
                 <Character />
+                <Divider my={10} />
                 <CH_Logline />
+                <Divider my={10} />
+                <Conflict />
             </AppContext.Provider>
         </Container>
     )
