@@ -10,12 +10,6 @@ const Layout = () => {
         paddingBottom: '10px',
     }
 
-    const shadow = {
-        WebkitBoxShadow: "-6px 5px 7px -3px rgba(0,0,0,0.75)",
-        MozBoxShadow: "-6px 5px 7px -3px rgba(0,0,0,0.75)",
-        "boxShadow": "-6px 5px 7px -3px rgba(0,0,0,0.75)"
-    }
-
 
     return (
         <>
@@ -48,14 +42,9 @@ const Layout = () => {
                     </div>
                 </div>
             </nav>
-            <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
-                <GridItem as="main" colSpan={{ base: 6, lg: 4, xl: 4 }} >
-                    <Outlet />
-                </GridItem>
-                <GridItem sx={shadow} as="aside" colSpan={{ base: 6, lg: 2, xl: 2 }} bg="#333333    " minHeight={{ lg: "100vh" }} p={{ base: "20px", lg: "30px" }}>
-                    <Sidebar />
-                </GridItem>
-            </Grid>
+
+            <Outlet />
+
         </>
     )
 }

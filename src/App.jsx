@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Dramatic } from './views/dramatic'
 import './App.css'
 import Layout from "./views/layout";
+import LogIn from "./views/login";
+import Project from "./views/project";
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Dramatic />} />
+            <Route index element={<LogIn />} />
+            <Route path="project" element={<Project />} />
+            <Route path="dramatic" element={<Dramatic />} />
           </Route>
         </Routes>
       </BrowserRouter>

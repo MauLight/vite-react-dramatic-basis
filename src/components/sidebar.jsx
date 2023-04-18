@@ -67,10 +67,10 @@ export default function Sidebar() {
             </ListItem>
 
             <ListItem justifyContent="center" display="flex" >
-                <Heading>Title</Heading>
+                <Heading>{state.title}</Heading>
             </ListItem>
             <ListItem justifyContent="center" display="flex" >
-                <Heading as="h6" fontSize={20}>Genre</Heading>
+                <Heading as="h6" fontSize={20}>{state.genre}</Heading>
             </ListItem>
             <ListItem justifyContent="center" display="flex" >
                 <Heading as="h6" fontSize={20}>Theme: {state.theme}</Heading>

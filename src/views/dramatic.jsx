@@ -1,4 +1,4 @@
-import { Box, Container, Divider, HStack, Heading } from "@chakra-ui/react"
+import { Box, Container, Divider, Grid, GridItem, HStack, Heading } from "@chakra-ui/react"
 import { createContext, useState, useReducer } from "react"
 import { Theme } from "../components/theme"
 import { Character } from "../components/character"
@@ -6,6 +6,7 @@ import { CH_Logline } from "../components/ch_logline";
 import Conflict from "../components/Conflict";
 import Climax from "../components/Climax";
 import { F_Logline } from "../components/f_logline";
+import Sidebar from "../components/sidebar";
 
 /*
 export const AppContext = createContext();
@@ -53,32 +54,49 @@ const reducer = (state, action) => {
 
 */
 
+const shadow = {
+    WebkitBoxShadow: "-6px 5px 7px -3px rgba(0,0,0,0.75)",
+    MozBoxShadow: "-6px 5px 7px -3px rgba(0,0,0,0.75)",
+    "boxShadow": "-6px 5px 7px -3px rgba(0,0,0,0.75)"
+}
+
 export const Dramatic = () => {
 
     const [title, setTitle] = useState("Dramatic Basis of a Story 2.0")
-//    const [state, dispatch] = useReducer(reducer, initialState)
+    //    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
-        <Container as="section" maxW="100%" my={10}>
-            <Box mb={20}>
-                <HStack>
-                    <Heading as="h1">{title}</Heading>
-                </HStack>
-            </Box>
-            <Divider orientation='horizontal' />
+        <>
 
-                <Theme />
-                <Divider my={10} />
-                <Character />
-                <Divider my={10} />
-                <CH_Logline />
-                <Divider my={10} />
-                <Conflict />
-                <Divider my={10} />
-                <Climax />
-                <Divider my={10} />
-                <F_Logline />
 
-        </Container>
+            <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
+                <GridItem as="main" colSpan={{ base: 6, lg: 4, xl: 4 }} >
+                    <Container as="section" maxW="100%" my={10}>
+                        <Box mb={20}>
+                            <HStack>
+                                <Heading as="h1">{title}</Heading>
+                            </HStack>
+                        </Box>
+                        <Divider orientation='horizontal' />
+
+                        <Theme />
+                        <Divider my={10} />
+                        <Character />
+                        <Divider my={10} />
+                        <CH_Logline />
+                        <Divider my={10} />
+                        <Conflict />
+                        <Divider my={10} />
+                        <Climax />
+                        <Divider my={10} />
+                        <F_Logline />
+
+                    </Container>
+                </GridItem>
+                <GridItem sx={shadow} as="aside" colSpan={{ base: 6, lg: 2, xl: 2 }} bg="#333333    " minHeight={{ lg: "100vh" }} p={{ base: "20px", lg: "30px" }}>
+                    <Sidebar />
+                </GridItem>
+            </Grid>
+        </>
     )
 }

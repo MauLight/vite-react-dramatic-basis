@@ -7,6 +7,18 @@
   max-width: 100% !important;
 }
 
+.page {
+  height: 100vh;
+  background-image: url('../src/img/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login {
+  height: 48%;
+  margin-top: 84px !important;
+}
+
 .navbar {
   padding: 35px !important;
   margin: 0%;

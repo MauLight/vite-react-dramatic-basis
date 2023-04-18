@@ -34,6 +34,8 @@ const initialState = {
 }
 
 const reducer = (state, action) => {
+  if (action.type === 'title') return { ...state, title: action.payload }
+  if (action.type === 'genre') return { ...state, genre: action.payload }
   if (action.type === 'theme') return { ...state, theme: action.payload }
   if (action.type === 'truth') return { ...state, truth: action.payload }
   if (action.type === 'contrapositive') return { ...state, contrapositive: action.payload }
