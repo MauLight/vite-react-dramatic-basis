@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Box, Flex, Heading, Highlight, Input, Text } from "@chakra-ui/react"
-import { AppContext } from "../views/dramatic"
+import { AppContext } from "../main"
 
 export const Character = () => {
 

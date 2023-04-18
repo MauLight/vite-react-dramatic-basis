@@ -5,7 +5,9 @@ import { Character } from "../components/character"
 import { CH_Logline } from "../components/ch_logline";
 import Conflict from "../components/Conflict";
 import Climax from "../components/Climax";
+import { F_Logline } from "../components/f_logline";
 
+/*
 export const AppContext = createContext();
 
 const initialState = {
@@ -46,12 +48,15 @@ const reducer = (state, action) => {
     if (action.type === 'resurrection') return { ...state, resurrection: action.payload }
     if (action.type === 'psychological') return { ...state, psychological: action.payload }
     if (action.type === 'moral') return { ...state, moral: action.payload }
+    if (action.type === 'f_logline') return { ...state, f_logline: action.payload }
 }
+
+*/
 
 export const Dramatic = () => {
 
     const [title, setTitle] = useState("Dramatic Basis of a Story 2.0")
-    const [state, dispatch] = useReducer(reducer, initialState)
+//    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <Container as="section" maxW="100%" my={10}>
@@ -61,7 +66,7 @@ export const Dramatic = () => {
                 </HStack>
             </Box>
             <Divider orientation='horizontal' />
-            <AppContext.Provider value={{ state, dispatch }}>
+
                 <Theme />
                 <Divider my={10} />
                 <Character />
@@ -71,7 +76,9 @@ export const Dramatic = () => {
                 <Conflict />
                 <Divider my={10} />
                 <Climax />
-            </AppContext.Provider>
+                <Divider my={10} />
+                <F_Logline />
+
         </Container>
     )
 }

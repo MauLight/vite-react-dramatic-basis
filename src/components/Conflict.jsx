@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Box, Flex, Heading, Highlight, Input, Text, FormControl, Button, HStack, List, ListItem, ListIcon, Divider, Center, Icon } from "@chakra-ui/react"
 import { ChevronRightIcon, ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons'
-import { AppContext } from "../views/dramatic"
+import { AppContext } from "../main"
 
 
 

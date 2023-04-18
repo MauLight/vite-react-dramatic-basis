@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Box, Flex, Heading, Highlight, Input, Select, Stack, Text, Divider } from "@chakra-ui/react"
-import { AppContext } from "../views/dramatic"
+import { AppContext } from "../main"
 
 
 
@@ -114,10 +114,10 @@ export default function Climax() {
                             <Text mt={5} lineHeight='tall'>
                                 <Highlight
                                     className="description"
-                                    query={['protagonist', 'wound', 'ghost']}
+                                    query={['protagonist', 'the lie', 'final action']}
                                     styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
                                 >
-                                    {!state.resurrection ? `The protagonist acknowledges their ${state.wound.toLowerCase()}and their ${state.ghost}.` : state.resurrection}
+                                    {!state.psychological && !state.moral ? `The protagonist falls into believing ${state.lie === "lie" ? "the lie" : state.lie} and that triggers their final action.` : `The protagonist fails to overcome ${state.psychological} and that triggers them to ${state.moral}.`}
                                 </Highlight>
                             </Text>
                         </Box>
