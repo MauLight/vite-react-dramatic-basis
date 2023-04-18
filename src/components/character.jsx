@@ -13,7 +13,7 @@ export const Character = () => {
     return (
         <Flex wrap="wrap" justifyContent="space-between">
             <Box my={10} mx={5} maxW={400}>
-                <Heading as="h4" textAlign="left" fontSize={30}>{"f) Need: "}{state.need}</Heading>
+                <Heading as="h4" textAlign="left" fontSize={30}>{"f) Need: "}</Heading>
                 <Input variant="flushed" type="text" onChange={e => changeInputValue("need", e.target.value)} />
                 <Text mt={5} lineHeight='tall'>
                     <Highlight
@@ -22,12 +22,12 @@ export const Character = () => {
                         styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
 
                     >
-                        {!state.need ? `To experience ${state.wound.toLowerCase()} because of ${state.ghost} and understand that ${state.truth}.` : state.need}
+                        {`To experience ${state.wound.toLowerCase()} because of ${state.ghost} and understand that ${state.truth}.`}
                     </Highlight>
                 </Text>
             </Box>
             <Box my={10} mx={5} maxW={400}>
-                <Heading as="h4" textAlign="left" fontSize={30}>{"e) Flaw: "}{state.flaw}</Heading>
+                <Heading as="h4" textAlign="left" fontSize={30}>{"e) Flaw: "}</Heading>
                 <Input placeholder="wound" variant="flushed" type="text" onChange={e => changeInputValue("wound", e.target.value)} />
                 <Input placeholder="ghost" variant="flushed" type="text" onChange={e => changeInputValue("ghost", e.target.value)} />
                 <Text mt={5} lineHeight='tall'>

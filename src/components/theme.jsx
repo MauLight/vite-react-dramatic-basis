@@ -15,7 +15,7 @@ export const Theme = () => {
         <>
             <Flex>
                 <Box my={10} mx={5}>
-                    <Heading as="h4" textAlign="left" fontSize={30}>Theme: {state.theme}</Heading>
+                    <Heading as="h4" textAlign="left" fontSize={30}>Theme: </Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("theme", e.target.value)} />
                     <Text mt={5} lineHeight='tall'>
                         <Highlight
@@ -31,7 +31,7 @@ export const Theme = () => {
             </Flex>
             <Flex wrap="wrap" justifyContent="space-evenly">
                 <Box my={10} mx={5}>
-                    <Heading as="h4" textAlign="left" fontSize={30}>{'a) Truth: '}<Text textAlign="center" fontSize='lg'>{state.truth}</Text></Heading>
+                    <Heading as="h4" textAlign="left" fontSize={30}>{'a) Truth: '}</Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("truth", e.target.value)} />
                     <Text mt={5} lineHeight='tall'>
                         <Highlight
@@ -46,7 +46,7 @@ export const Theme = () => {
                 </Box>
 
                 <Box my={10} mx={5}>
-                    <Heading as="h4" textAlign="left" fontSize={30}>{'b) Contrapositive: '}<Text textAlign="center" fontSize='lg'>{state.contrapositive}</Text></Heading>
+                    <Heading as="h4" textAlign="left" fontSize={30}>{'b) Contrapositive: '}</Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("contrapositive", e.target.value)} />
                     <Text mt={5} lineHeight='tall'>
                         <Highlight
@@ -61,7 +61,7 @@ export const Theme = () => {
                 </Box>
 
                 <Box my={10} mx={5}>
-                    <Heading as="h4" textAlign="left" fontSize={30}>{'c) Lie: '}<Text textAlign="center" fontSize='lg'>{state.lie}</Text></Heading>
+                    <Heading as="h4" textAlign="left" fontSize={30}>{'c) Lie: '}</Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("lie", e.target.value)} />
                     <Text mt={5} lineHeight='tall'>
                         <Highlight

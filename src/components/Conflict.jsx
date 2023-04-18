@@ -160,7 +160,9 @@ export default function Conflict() {
                             {`Unified forces against the protagonist:`}
                         </Highlight>
                     </Text>
-                    <OppositionList />
+                    {
+                        !state.antagonist && !state.allies && !state.gatekeepers ? "" : <OppositionList />
+                    }
                 </Box>
             </Flex>
             <Conflict_Squeme />

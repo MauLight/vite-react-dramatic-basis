@@ -18,6 +18,7 @@ export default function Climax() {
     const handleChange = (e) => {
         console.log(e.target.value)
         setClimax(e.target.value)
+        changeInputValue("climax", e.target.value)
         setIsHidden("")
     }
 

@@ -23,7 +23,7 @@ export const CH_Logline = () => {
                     styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
 
                 >
-                    {!state.ch_logline ? `After ${state.contrapositive}, a character who has ${state.wound.toLowerCase()} because of ${state.ghost} has to experience ${state.wound.toLowerCase()} because of ${state.ghost} to understand that ${state.truth}.` : state.ch_logline}
+                    {`After ${state.contrapositive}, a character who has ${state.wound.toLowerCase()} because of ${state.ghost} has to experience ${state.wound.toLowerCase()} because of ${state.ghost} to understand that ${state.truth}.`}
                 </Highlight>
             </Text>
         </Box>
