@@ -28,7 +28,7 @@ export const Theme = () => {
                     </Text>
                 </Box>
             </Flex>
-            <Flex wrap="wrap">
+            <Flex wrap="wrap" justifyContent="space-evenly">
                 <Box my={10} mx={5}>
                     <Heading as="h4" textAlign="left" fontSize={30}>{'a) Truth: '}<Text textAlign="center" fontSize='lg'>{state.truth}</Text></Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("truth", e.target.value)} />

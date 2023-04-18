@@ -37,7 +37,7 @@ export default function Conflict() {
             <>
                 <Heading as="h4" textAlign="left" fontSize={30} my={10} >Conflict: </Heading>
                 <Flex justifyContent="center">
-                    <Box w={400}>{state.plan.length === 0 ? "PLAN" :
+                    <Box w={400}>{state.plan.length === 0 ? "THE PLAN" :
                         <List textAlign="left">
                             {state.plan.length === 0 ? null : state.plan.map((elem, index) => {
                                 return (
@@ -59,7 +59,7 @@ export default function Conflict() {
                         <Divider mx={20} orientation='vertical' />
                     </Center>
                     <Icon mr={10} h="1.5em" as={ArrowLeftIcon} color='green.500' />
-                    <Box w={400}>{state.antagonist === "" ? "OPPOSITION" : <OppositionList />}</Box>
+                    <Box w={400}>{state.antagonist === "" && state.allies === "" && state.gatekeepers === "" ? "OPPOSITION" : <OppositionList />}</Box>
                 </Flex>
             </>
         )
@@ -83,7 +83,7 @@ export default function Conflict() {
 
     return (
         <>
-            <Flex wrap="wrap" justifyContent="space-between">
+            <Flex wrap="wrap" justifyContent="space-evenly">
                 <Box my={10} mx={5} maxW={400}>
                     <Heading as="h4" textAlign="left" fontSize={30}>{"g) Want: "}{state.want}</Heading>
                     <Input placeholder="desire" variant="flushed" type="text" onChange={e => changeInputValue("desire", e.target.value)} />
@@ -100,7 +100,7 @@ export default function Conflict() {
                     </Text>
                 </Box>
                 <Box my={10} mx={5} maxW={400}>
-                    <Heading as="h4" textAlign="left" fontSize={30}>{"h) Antagonism: "}{state.want}</Heading>
+                    <Heading as="h4" textAlign="left" fontSize={30}>{"h) Antagonism: "}</Heading>
                     <Input variant="flushed" type="text" onChange={e => changeInputValue("antagonism", e.target.value)} />
                     <Text mt={5} lineHeight='tall'>
                         <Highlight
@@ -132,18 +132,18 @@ export default function Conflict() {
                         >
                             {`Plan to achieve ${state.goal}`}
                         </Highlight>
-                        <List textAlign="left" mt={10}>
-                            {state.plan.length === 0 ? null : state.plan.map((elem, index) => {
-                                return (
-
-                                    <ListItem key={index}>
-                                        <ListIcon as={ChevronRightIcon} color='green.500' />
-                                        {elem}
-                                    </ListItem>
-                                )
-                            })}
-                        </List>
                     </Text>
+                    <List textAlign="left" mt={10}>
+                        {state.plan.length === 0 ? null : state.plan.map((elem, index) => {
+                            return (
+
+                                <ListItem key={index}>
+                                    <ListIcon as={ChevronRightIcon} color='green.500' />
+                                    {elem}
+                                </ListItem>
+                            )
+                        })}
+                    </List>
                 </Box>
                 <Box my={10} mx={5} maxW={400}>
                     <Heading as="h4" textAlign="left" fontSize={30}>{"h) Opposition: "}{state.opposition}</Heading>

@@ -4,6 +4,7 @@ import { Theme } from "../components/theme"
 import { Character } from "../components/character"
 import { CH_Logline } from "../components/ch_logline";
 import Conflict from "../components/Conflict";
+import Climax from "../components/Climax";
 
 export const AppContext = createContext();
 
@@ -19,6 +20,8 @@ const initialState = {
     goal: "goal",
     plan: [],
     antagonist: "",
+    allies: "",
+    gatekeepers: "",
 }
 
 const reducer = (state, action) => {
@@ -37,6 +40,12 @@ const reducer = (state, action) => {
     if (action.type === 'antagonist') return { ...state, antagonist: action.payload }
     if (action.type === 'allies') return { ...state, allies: action.payload }
     if (action.type === 'gatekeepers') return { ...state, gatekeepers: action.payload }
+    if (action.type === 'defeat') return { ...state, defeat: action.payload }
+    if (action.type === 'half_truth') return { ...state, half_truth: action.payload }
+    if (action.type === 'battle') return { ...state, battle: action.payload }
+    if (action.type === 'resurrection') return { ...state, resurrection: action.payload }
+    if (action.type === 'psychological') return { ...state, psychological: action.payload }
+    if (action.type === 'moral') return { ...state, moral: action.payload }
 }
 
 export const Dramatic = () => {
@@ -60,6 +69,8 @@ export const Dramatic = () => {
                 <CH_Logline />
                 <Divider my={10} />
                 <Conflict />
+                <Divider my={10} />
+                <Climax />
             </AppContext.Provider>
         </Container>
     )
