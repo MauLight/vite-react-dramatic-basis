@@ -1,6 +1,6 @@
 import { AtSignIcon, CalendarIcon, ChevronRightIcon, EditIcon, UnlockIcon } from '@chakra-ui/icons'
 import { Avatar, AvatarBadge, Box, Button, Divider, Heading, Image, List, ListIcon, ListItem, Text, useToast } from '@chakra-ui/react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { AppContext } from "../main"
 import image from '../img/poster-placeholder.jpg'
 import { useContext } from 'react'
@@ -8,21 +8,22 @@ import { useContext } from 'react'
 export default function Sidebar() {
 
     const { state, dispatch } = useContext(AppContext)
+    const navigate = useNavigate();
 
     const toast = useToast();
 
     const OppositionList = () => {
         return (
             <List textAlign="left">
-                <ListItem>
+                <ListItem fontSize={12}>
                     <ListIcon as={ChevronRightIcon} color='green.500' />
                     {state.antagonist}
                 </ListItem>
-                <ListItem>
+                <ListItem fontSize={12}>
                     <ListIcon as={ChevronRightIcon} color='green.500' />
                     {state.allies}
                 </ListItem>
-                <ListItem>
+                <ListItem fontSize={12}>
                     <ListIcon as={ChevronRightIcon} color='green.500' />
                     {state.gatekeepers}
                 </ListItem>
@@ -31,16 +32,7 @@ export default function Sidebar() {
     }
 
     const handleClick = () => {
-        toast({
-            title: "Logged out",
-            description: "You've succesfully logged out of the system.",
-            duration: 5000,
-            isClosable: true,
-            status: "success",
-            variant: 'left-accent',
-            position: 'bottom-right',
-            icon: <UnlockIcon />
-        });
+        navigate("/document")
     }
 
     const btnStyle = {
@@ -173,6 +165,11 @@ export default function Sidebar() {
                 <Heading as="h6" fontSize={20}>Functional Logline:
                     <Text fontSize={12} fontWeight="medium">{state.f_logline}</Text>
                 </Heading>
+            </ListItem>
+            <ListItem justifyContent="center" display="flex" >
+                <Button mt={30} colorScheme='teal' size='lg' onClick={handleClick} >
+                    Save
+                </Button>
             </ListItem>
         </List>
     )

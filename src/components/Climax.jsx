@@ -111,7 +111,8 @@ export default function Climax() {
                         :
                         <Box my={5} mx={5} maxW={300} display={isHidden}>
                             <Heading as="h4" textAlign="left" fontSize={30}>{"l) Fall into Lie: "}</Heading>
-                            <Input variant="flushed" type="text" onChange={e => changeInputValue("fall_into_lie", e.target.value)} />
+                            <Input placeholder="psychological" variant="flushed" type="text" onChange={e => changeInputValue("psychological", e.target.value)} />
+                            <Input placeholder="moral" variant="flushed" type="text" onChange={e => changeInputValue("moral", e.target.value)} />
                             <Text mt={5} lineHeight='tall'>
                                 <Highlight
                                     className="description"

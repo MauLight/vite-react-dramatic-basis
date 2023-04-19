@@ -37,7 +37,7 @@ const Layout = () => {
                             <Link to="/profile" className="nav-link" >PROFILE</Link>
                         </li>
                         <li className="nav-item mx-3">
-                            <Link to="login" className="nav-link" >LOGIN</Link>
+                            <Link to="/" className="nav-link" >LOGIN</Link>
                         </li>
                     </div>
                 </div>

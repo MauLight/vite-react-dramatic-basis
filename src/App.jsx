@@ -4,6 +4,7 @@ import './App.css'
 import Layout from "./views/layout";
 import LogIn from "./views/login";
 import Project from "./views/project";
+import PDFDocument from "./views/Document";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<LogIn />} />
             <Route path="project" element={<Project />} />
             <Route path="dramatic" element={<Dramatic />} />
+            <Route path="document" element={<PDFDocument />} />
           </Route>
         </Routes>
       </BrowserRouter>

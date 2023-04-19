@@ -31,6 +31,7 @@ const initialState = {
   allies: "",
   gatekeepers: "",
   climax: null,
+  moral: "",
 }
 
 const reducer = (state, action) => {
@@ -56,6 +57,7 @@ const reducer = (state, action) => {
   if (action.type === 'battle') return { ...state, battle: action.payload }
   if (action.type === 'resurrection') return { ...state, resurrection: action.payload }
   if (action.type === 'climax') return { ...state, climax: action.payload }
+  if (action.type === 'psychological') return { ...state, psychological: action.payload }
   if (action.type === 'moral') return { ...state, moral: action.payload }
   if (action.type === 'f_logline') return { ...state, f_logline: action.payload }
 }
@@ -72,9 +74,9 @@ const Main = () => {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
     <ChakraProvider theme={theme}>
       <Main />
     </ChakraProvider>
-  </React.StrictMode>,
+
 )
